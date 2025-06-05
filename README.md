@@ -203,3 +203,25 @@ Contributions are welcome! Please read our contributing guidelines and submit pu
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io)
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Creating MCP Servers Guide](https://modelcontextprotocol.io/tutorials/building-servers)
+
+## MCP Servers Built with This Template
+
+Here are some MCP servers built using this template:
+
+### Wayback Machine MCP
+[![GitHub](https://img.shields.io/github/stars/Mearman/mcp-wayback-machine?style=social)](https://github.com/Mearman/mcp-wayback-machine)
+[![npm version](https://img.shields.io/npm/v/mcp-wayback-machine.svg)](https://www.npmjs.com/package/mcp-wayback-machine)
+[![npm downloads](https://img.shields.io/npm/dm/mcp-wayback-machine.svg)](https://www.npmjs.com/package/mcp-wayback-machine)
+
+Archive and retrieve web pages using the Internet Archive's Wayback Machine. No API keys required.
+
+### OpenAlex MCP
+[![GitHub](https://img.shields.io/github/stars/Mearman/mcp-openalex?style=social)](https://github.com/Mearman/mcp-openalex)
+[![npm version](https://img.shields.io/npm/v/mcp-openalex.svg)](https://www.npmjs.com/package/mcp-openalex)
+[![npm downloads](https://img.shields.io/npm/dm/mcp-openalex.svg)](https://www.npmjs.com/package/mcp-openalex)
+
+Access scholarly articles and research data from the OpenAlex database.
+
+---
+
+*Building an MCP server? [Use this template](https://github.com/Mearman/mcp-template/generate) and add your server to this list!*
