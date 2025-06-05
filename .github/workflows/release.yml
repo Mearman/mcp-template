@@ -103,6 +103,7 @@ jobs:
           generate_release_notes: true
 
       - name: Publish to NPM
+        if: ${{ secrets.NPM_TOKEN != '' }}
         run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -116,7 +117,7 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           # Update package name for GitHub Packages
-          npm pkg set name="@${{ github.repository_owner }}/mcp-wayback-machine"
+          npm pkg set name="@${{ github.repository_owner }}/mcp-template"
           npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

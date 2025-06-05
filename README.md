@@ -178,7 +178,9 @@ This template includes semantic-release for automated versioning and publishing:
    - Determine version bump
    - Update CHANGELOG.md
    - Create GitHub release
-   - Publish to npm
+   - Publish to npm (if NPM_TOKEN secret is configured)
+
+**Note**: NPM publishing is optional. If you don't want to publish to npm, simply don't add the `NPM_TOKEN` secret to your repository. The release process will still create GitHub releases.
 
 ## Best Practices
 
