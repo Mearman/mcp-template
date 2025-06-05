@@ -57,6 +57,7 @@ export async function fetchExampleTool(args: unknown) {
 		const startTime = Date.now();
 
 		// Prepare request options
+		// biome-ignore lint/suspicious/noExplicitAny: Dynamic options building
 		const requestOptions: any = {
 			backend: input.backend,
 			noCache: input.no_cache,
@@ -166,6 +167,7 @@ export async function configureFetchTool(args: unknown) {
 		}
 
 		// Update configuration (only include defined values)
+		// biome-ignore lint/suspicious/noExplicitAny: Dynamic config building
 		const updateConfig: any = {};
 		if (input.backend !== undefined) updateConfig.backend = input.backend;
 		if (input.cache_ttl !== undefined) updateConfig.cacheTtl = input.cache_ttl;

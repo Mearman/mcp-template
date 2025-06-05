@@ -79,7 +79,9 @@ type FetchFunction = (url: string | URL, options?: RequestInit) => Promise<Respo
  */
 export class ConfigurableFetch {
 	private config: FetchConfig;
+	// biome-ignore lint/suspicious/noExplicitAny: node-fetch-cache doesn't export types
 	private memoryCache?: any;
+	// biome-ignore lint/suspicious/noExplicitAny: node-fetch-cache doesn't export types
 	private diskCache?: any;
 
 	/**
@@ -162,6 +164,7 @@ export class ConfigurableFetch {
 	 * @param requestHeaders - Headers from the request
 	 * @returns Merged headers object
 	 */
+	// biome-ignore lint/suspicious/noExplicitAny: Headers can be multiple types
 	private mergeHeaders(requestHeaders?: any): Record<string, string> {
 		const headers: Record<string, string> = {
 			...this.config.defaultHeaders,

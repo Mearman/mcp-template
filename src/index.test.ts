@@ -21,8 +21,11 @@ vi.mock('./tools/example.js');
  * Test suite for the MCP server module
  */
 describe('MCP Server Entry Point', () => {
+	// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 	let mockServer: any;
+	// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 	let mockTransport: any;
+	// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 	let mockProgram: any;
 	let originalArgv: string[];
 
@@ -38,16 +41,19 @@ describe('MCP Server Entry Point', () => {
 			connect: vi.fn(),
 			close: vi.fn(),
 		};
+		// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 		vi.mocked(Server).mockImplementation(() => mockServer as any);
 
 		// Mock Transport
 		mockTransport = {};
+		// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 		vi.mocked(StdioServerTransport).mockImplementation(() => mockTransport as any);
 
 		// Mock CLI
 		mockProgram = {
 			parseAsync: vi.fn(),
 		};
+		// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 		vi.mocked(cliModule.createCLI).mockReturnValue(mockProgram as any);
 
 		// Mock example tool

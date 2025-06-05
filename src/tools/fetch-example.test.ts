@@ -121,6 +121,7 @@ describe('fetchExampleTool', () => {
 			text: vi.fn().mockResolvedValue(JSON.stringify(mockData)),
 		};
 
+		// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 		vi.mocked(configurableFetch.fetch).mockResolvedValue(mockResponse as any);
 
 		const result = await fetchExampleTool({
@@ -152,7 +153,9 @@ describe('fetchExampleTool', () => {
 		};
 
 		vi.mocked(configurableFetch.fetch)
+			// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 			.mockResolvedValueOnce(mockResponse as any)
+			// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 			.mockResolvedValueOnce(mockResponse as any);
 
 		const result = await fetchExampleTool({
@@ -173,6 +176,7 @@ describe('fetchExampleTool', () => {
 			text: vi.fn().mockResolvedValue('test'),
 		};
 
+		// biome-ignore lint/suspicious/noExplicitAny: Test mocks
 		vi.mocked(configurableFetch.fetch).mockResolvedValue(mockResponse as any);
 
 		await fetchExampleTool({

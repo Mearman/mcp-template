@@ -67,6 +67,7 @@ export function createCLI() {
 			) => {
 				const spinner = ora('Fetching data...').start();
 				try {
+					// biome-ignore lint/suspicious/noExplicitAny: Building args dynamically
 					const args: any = { url };
 					if (options.backend) args.backend = options.backend;
 					if (options.cache === false) args.no_cache = true;
@@ -109,6 +110,7 @@ export function createCLI() {
 			}) => {
 				const spinner = ora('Updating fetch configuration...').start();
 				try {
+					// biome-ignore lint/suspicious/noExplicitAny: Building args dynamically
 					const args: any = {};
 					if (options.backend) args.backend = options.backend;
 					if (options.cacheTtl) args.cache_ttl = options.cacheTtl;

@@ -75,6 +75,7 @@ describe('validateInput', () => {
 			parse: () => {
 				throw new Error('Not a ZodError');
 			},
+			// biome-ignore lint/suspicious/noExplicitAny: Testing error handling
 		} as any;
 
 		expect(() => validateInput(faultySchema, 'input')).toThrow('Not a ZodError');
