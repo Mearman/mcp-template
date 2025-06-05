@@ -4451,6 +4451,8 @@ __metadata:
     vitest: "npm:^2.1.8"
     zod: "npm:^3.25.51"
     zod-to-json-schema: "npm:^3.24.1"
+  bin:
+    mcp-template: dist/index.js
   languageName: unknown
   linkType: soft
 
