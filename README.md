@@ -15,6 +15,9 @@ A template repository for building Model Context Protocol (MCP) servers with Typ
 - 📝 Comprehensive documentation and examples
 - 🛠️ Development tools: Biome for linting/formatting, Husky for Git hooks
 - 🎯 Pre-configured for MCP server development
+- 🔐 Built-in validation using Zod schemas
+- ⚡ ES modules with native Node.js support
+- 📊 Code coverage reporting with c8
 
 ## MCP Servers Built with This Template
 
@@ -67,13 +70,25 @@ yarn dev
 src/
 ├── index.ts          # MCP server entry point
 ├── tools/            # Tool implementations
-│   └── example.ts    # Example tool
+│   ├── example.ts    # Example tool
+│   └── *.test.ts     # Tool tests
 ├── utils/            # Shared utilities
-│   └── validation.ts # Input validation helpers
+│   ├── validation.ts # Input validation helpers
+│   └── *.test.ts     # Utility tests
 └── types.ts          # TypeScript type definitions
+
+# Configuration files
+├── .github/workflows/  # CI/CD pipelines
+├── .husky/            # Git hooks
+├── biome.json         # Linter/formatter config
+├── tsconfig.json      # TypeScript config
+├── vitest.config.ts   # Test runner config
+└── .releaserc.json    # Semantic release config
 ```
 
 ## Development
+
+### Available Commands
 
 ```bash
 # Install dependencies
@@ -94,13 +109,25 @@ yarn test
 # Run tests in watch mode
 yarn test:watch
 
-# Run tests with coverage
-yarn test:coverage
+# Run tests with coverage report
+yarn test:ci
 
-# Lint and format code
+# Lint code
 yarn lint
+
+# Auto-fix linting issues
+yarn lint:fix
+
+# Format code
 yarn format
 ```
+
+### Development Workflow
+
+1. **Start development**: `yarn dev` - Runs the server with hot reload
+2. **Write tests**: Add `.test.ts` files alongside your code
+3. **Run tests**: `yarn test:watch` - Keep tests running while you code
+4. **Lint/format**: Automatic on commit via Husky hooks
 
 ## Creating Your MCP Server
 
@@ -189,9 +216,27 @@ describe('myTool', () => {
 
 ### NPM Package
 
-1. Update `package.json` with your package details
-2. Build: `yarn build`
-3. Publish: `npm publish`
+1. Update `package.json` with your package details:
+   - `name`: Your package name (e.g., `mcp-your-server`)
+   - `description`: Clear description of what your server does
+   - `keywords`: Add relevant keywords for discoverability
+   - `author`: Your name or organization
+   - `repository`: Your GitHub repository URL
+
+2. Build the project:
+   ```bash
+   yarn build
+   ```
+
+3. Test the build locally:
+   ```bash
+   yarn start
+   ```
+
+4. Publish to npm:
+   ```bash
+   npm publish
+   ```
 
 ### Automated Releases
 
@@ -214,6 +259,61 @@ This template includes semantic-release for automated versioning and publishing:
 3. **Testing**: Write comprehensive tests for all tools
 4. **Documentation**: Document each tool's purpose and usage
 5. **Type Safety**: Leverage TypeScript's type system fully
+6. **Modular Design**: Keep tools focused on single responsibilities
+7. **Async/Await**: Use modern async patterns for all I/O operations
+8. **Environment Variables**: Use `.env` files for configuration (never commit secrets)
+
+## Adding CLI Support
+
+To add CLI functionality to your MCP server (like the Wayback Machine example):
+
+1. Install Commander.js:
+   ```bash
+   yarn add commander chalk ora
+   ```
+
+2. Create `src/cli.ts`:
+   ```typescript
+   import { Command } from 'commander';
+   import chalk from 'chalk';
+   
+   export function createCLI() {
+     const program = new Command();
+     
+     program
+       .name('your-tool')
+       .description('Your MCP server as a CLI')
+       .version('1.0.0');
+       
+     // Add commands here
+     
+     return program;
+   }
+   ```
+
+3. Update `src/index.ts` to detect CLI mode:
+   ```typescript
+   async function main() {
+     const isCliMode = process.stdin.isTTY || process.argv.length > 2;
+     
+     if (isCliMode && process.argv.length > 2) {
+       const { createCLI } = await import('./cli.js');
+       const program = createCLI();
+       await program.parseAsync(process.argv);
+     } else {
+       // MCP server mode
+       const transport = new StdioServerTransport();
+       await server.connect(transport);
+     }
+   }
+   ```
+
+4. Add bin entry to `package.json`:
+   ```json
+   "bin": {
+     "your-tool": "dist/index.js"
+   }
+   ```
 
 ## License
 
@@ -225,8 +325,27 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareA
 
 Contributions are welcome! Please read our contributing guidelines and submit pull requests to our repository.
 
+## Troubleshooting
+
+### Common Issues
+
+1. **Build errors**: Ensure all dependencies are installed with `yarn install`
+2. **Type errors**: Run `npx tsc --noEmit` to check TypeScript types
+3. **Test failures**: Check test files are named `*.test.ts`
+4. **Claude Desktop connection**: Verify the path in your config is absolute
+
+### Debug Mode
+
+To see detailed logs when running as an MCP server:
+
+```bash
+DEBUG=* node dist/index.js
+```
+
 ## Resources
 
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io)
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Creating MCP Servers Guide](https://modelcontextprotocol.io/tutorials/building-servers)
+- [Awesome MCP Servers](https://github.com/modelcontextprotocol/awesome-mcp) - Community-curated list
+- [MCP Discord](https://discord.gg/mcp) - Get help and share your servers
