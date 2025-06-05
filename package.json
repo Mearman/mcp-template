@@ -18,7 +18,7 @@
 	},
 	"keywords": ["mcp", "model-context-protocol", "typescript", "template", "mcp-server"],
 	"author": "",
-	"license": "MIT",
+	"license": "CC-BY-NC-SA-4.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Mearman/mcp-template.git"

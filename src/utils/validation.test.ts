@@ -1,7 +1,18 @@
+/**
+ * @fileoverview Unit tests for validation utilities and schemas
+ * @module utils/validation.test
+ */
+
 import { describe, expect, it } from 'vitest';
 import { dateSchema, timestampSchema, urlSchema, validateInput } from './validation.js';
 
+/**
+ * Test suite for validation schemas
+ */
 describe('validation schemas', () => {
+	/**
+	 * Tests for URL validation schema
+	 */
 	describe('urlSchema', () => {
 		it('should accept valid URLs', () => {
 			expect(urlSchema.parse('https://example.com')).toBe('https://example.com');
@@ -14,6 +25,9 @@ describe('validation schemas', () => {
 		});
 	});
 
+	/**
+	 * Tests for date validation schema (YYYY-MM-DD format)
+	 */
 	describe('dateSchema', () => {
 		it('should accept valid dates', () => {
 			expect(dateSchema.parse('2024-01-01')).toBe('2024-01-01');
@@ -27,6 +41,9 @@ describe('validation schemas', () => {
 		});
 	});
 
+	/**
+	 * Tests for timestamp validation schema (YYYYMMDDHHmmss format)
+	 */
 	describe('timestampSchema', () => {
 		it('should accept valid timestamps', () => {
 			expect(timestampSchema.parse('20240101120000')).toBe('20240101120000');
@@ -39,6 +56,9 @@ describe('validation schemas', () => {
 	});
 });
 
+/**
+ * Test suite for the validateInput utility function
+ */
 describe('validateInput', () => {
 	it('should return parsed value for valid input', () => {
 		const result = validateInput(urlSchema, 'https://example.com');

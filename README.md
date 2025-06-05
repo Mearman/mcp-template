@@ -2,6 +2,9 @@
 
 A template repository for building Model Context Protocol (MCP) servers with TypeScript.
 
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge)](https://github.com/Mearman/mcp-template/generate)
+[![GitHub](https://img.shields.io/github/stars/Mearman/mcp-template?style=for-the-badge)](https://github.com/Mearman/mcp-template)
+
 ## Features
 
 - 🚀 Full TypeScript support with strict mode
@@ -214,7 +217,9 @@ This template includes semantic-release for automated versioning and publishing:
 
 ## License
 
-MIT
+[![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ## Contributing
 
