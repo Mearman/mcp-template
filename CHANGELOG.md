@@ -1,3 +1,18 @@
+# 1.0.0 (2025-06-05)
+
+
+### Bug Fixes
+
+* make NPM publishing optional in workflows ([d29873c](https://github.com/Mearman/mcp-template/commit/d29873c45a9f95487f3c443277b57b95102a86b0))
+* update package name and repository URL to mcp-template ([4e521d9](https://github.com/Mearman/mcp-template/commit/4e521d96b75076938ac8386948ee32f00d66b689))
+* update yarn.lock with template dependencies ([bf91d1d](https://github.com/Mearman/mcp-template/commit/bf91d1db32286419774909dcf1810a10250101fc))
+
+
+### Features
+
+* add template source code structure ([f5fa805](https://github.com/Mearman/mcp-template/commit/f5fa805b1906d5a79a95dd78d025eaf9099b4bdc))
+* initial MCP TypeScript template setup ([c22f20d](https://github.com/Mearman/mcp-template/commit/c22f20d183e03cc14108c232539a166febda1181))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
