@@ -75,10 +75,8 @@ describe('validateInput', () => {
 			parse: () => {
 				throw new Error('Not a ZodError');
 			},
-		};
+		} as any;
 
-		expect(() =>
-			validateInput(faultySchema as { parse: (input: unknown) => unknown }, 'input'),
-		).toThrow('Not a ZodError');
+		expect(() => validateInput(faultySchema, 'input')).toThrow('Not a ZodError');
 	});
 });

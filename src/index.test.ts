@@ -21,15 +21,9 @@ vi.mock('./tools/example.js');
  * Test suite for the MCP server module
  */
 describe('MCP Server Entry Point', () => {
-	let mockServer: {
-		setRequestHandler: ReturnType<typeof vi.fn>;
-		connect: ReturnType<typeof vi.fn>;
-		close: ReturnType<typeof vi.fn>;
-	};
-	let mockTransport: object;
-	let mockProgram: {
-		parseAsync: ReturnType<typeof vi.fn>;
-	};
+	let mockServer: any;
+	let mockTransport: any;
+	let mockProgram: any;
 	let originalArgv: string[];
 
 	beforeEach(() => {
@@ -44,17 +38,17 @@ describe('MCP Server Entry Point', () => {
 			connect: vi.fn(),
 			close: vi.fn(),
 		};
-		vi.mocked(Server).mockImplementation(() => mockServer);
+		vi.mocked(Server).mockImplementation(() => mockServer as any);
 
 		// Mock Transport
 		mockTransport = {};
-		vi.mocked(StdioServerTransport).mockImplementation(() => mockTransport);
+		vi.mocked(StdioServerTransport).mockImplementation(() => mockTransport as any);
 
 		// Mock CLI
 		mockProgram = {
 			parseAsync: vi.fn(),
 		};
-		vi.mocked(cliModule.createCLI).mockReturnValue(mockProgram);
+		vi.mocked(cliModule.createCLI).mockReturnValue(mockProgram as any);
 
 		// Mock example tool
 		vi.mocked(exampleModule.exampleTool).mockResolvedValue({
@@ -158,14 +152,22 @@ describe('MCP Server Entry Point', () => {
 		const listToolsHandler = mockServer.setRequestHandler.mock.calls[0][1];
 
 		const result = await listToolsHandler();
-		expect(result).toEqual({
-			tools: [
-				{
-					name: 'example_tool',
-					description: 'An example tool that echoes back the input',
-					inputSchema: expect.any(Object),
-				},
-			],
+		expect(result.tools).toHaveLength(3);
+		expect(result.tools[0]).toEqual({
+			name: 'example_tool',
+			description: 'An example tool that echoes back the input',
+			inputSchema: expect.any(Object),
+		});
+		expect(result.tools[1]).toEqual({
+			name: 'fetch_example',
+			description:
+				'Demonstrate configurable fetch patterns with different backends and caching',
+			inputSchema: expect.any(Object),
+		});
+		expect(result.tools[2]).toEqual({
+			name: 'configure_fetch',
+			description: 'Configure the global fetch instance settings and caching behavior',
+			inputSchema: expect.any(Object),
 		});
 	});
 
