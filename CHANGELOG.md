@@ -1,3 +1,22 @@
+# [1.1.0](https://github.com/Mearman/mcp-template/compare/v1.0.0...v1.1.0) (2025-06-05)
+
+
+### Bug Fixes
+
+* add lint ignore comments for necessary any types ([337e819](https://github.com/Mearman/mcp-template/commit/337e819d7428d8e86024abf4704b179c5c97ce04))
+* update yarn.lock for new CLI dependencies ([fb8bb46](https://github.com/Mearman/mcp-template/commit/fb8bb46faa4c48cb6251417e68ba7981211ffa8e))
+
+
+### Features
+
+* add CLI commands for fetch pattern demonstration ([3c3578b](https://github.com/Mearman/mcp-template/commit/3c3578b91163585cb1d4eb3d0f0d8c5947a8acf9))
+* add CLI functionality to complete dual-mode template ([9565319](https://github.com/Mearman/mcp-template/commit/9565319168ae691c7cbb4d4c932b9b9acf012820))
+* add MCP tools demonstrating configurable fetch pattern ([a102800](https://github.com/Mearman/mcp-template/commit/a1028009ff59662d53dc1202f7fef77ba6640c82))
+* add node-fetch-cache dependency for configurable fetch pattern ([ef4d32f](https://github.com/Mearman/mcp-template/commit/ef4d32fc39662dff0b63603fe788b53e0433ac10))
+* implement configurable fetch utility with multiple backends ([47b34f7](https://github.com/Mearman/mcp-template/commit/47b34f75642620dd8be26e5eeaa466540dbc7562))
+* integrate fetch example tools into MCP server ([b507c3d](https://github.com/Mearman/mcp-template/commit/b507c3d48e28b8380e39257aaeae05613a183cb6))
+* maximize test coverage for mcp-template ([9cda6cf](https://github.com/Mearman/mcp-template/commit/9cda6cf73f195ff50996ee9630baba9359362ce2))
+
 # 1.0.0 (2025-06-05)
 
 
