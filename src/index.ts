@@ -1,73 +1,101 @@
 #!/usr/bin/env node
 /**
- * @fileoverview MCP server entry point that sets up and starts the server
+ * @fileoverview Entry point that supports both MCP server and CLI modes
  * @module index
  */
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
-import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
+import { createCLI } from './cli.js';
 import { ExampleToolSchema, exampleTool } from './tools/example.js';
 
 /**
- * Create the MCP server instance with configured capabilities
+ * Determine if we're running in CLI mode
+ * CLI mode is detected when command line arguments are provided beyond node and script name
  */
-const server = new Server(
-	{
-		name: 'mcp-template',
-		version: '0.1.0',
-	},
-	{
-		capabilities: {
-			tools: {},
-		},
-	},
-);
+const isCliMode = process.argv.length > 2;
 
 /**
- * Register handler for listing available tools
- * @returns List of available tools with their schemas
+ * Main entry point that handles both MCP and CLI modes
  */
-server.setRequestHandler(ListToolsRequestSchema, async () => {
-	return {
-		tools: [
-			{
-				name: 'example_tool',
-				description: 'An example tool that echoes back the input',
-				inputSchema: zodToJsonSchema(ExampleToolSchema),
-			},
-		],
-	};
-});
-
-/**
- * Register handler for executing tool calls
- * @param request - The tool call request containing tool name and arguments
- * @returns Tool execution result
- */
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-	const { name, arguments: args } = request.params;
-
-	switch (name) {
-		case 'example_tool':
-			return await exampleTool(args);
-		default:
-			throw new Error(`Unknown tool: ${name}`);
+async function main() {
+	if (isCliMode) {
+		// CLI Mode: Run as command-line tool
+		const program = createCLI();
+		await program.parseAsync(process.argv);
+	} else {
+		// MCP Mode: Run as MCP server
+		await startMcpServer();
 	}
-});
+}
 
 /**
- * Start the MCP server using stdio transport
+ * Start the MCP server with all configured tools and handlers
  */
-const transport = new StdioServerTransport();
-await server.connect(transport);
+async function startMcpServer() {
+	/**
+	 * Create the MCP server instance with configured capabilities
+	 */
+	const server = new Server(
+		{
+			name: 'mcp-template',
+			version: '0.1.0',
+		},
+		{
+			capabilities: {
+				tools: {},
+			},
+		},
+	);
 
-/**
- * Handle graceful shutdown on SIGINT (Ctrl+C)
- */
-process.on('SIGINT', async () => {
-	await server.close();
-	process.exit(0);
-});
+	/**
+	 * Register handler for listing available tools
+	 * @returns List of available tools with their schemas
+	 */
+	server.setRequestHandler(ListToolsRequestSchema, async () => {
+		return {
+			tools: [
+				{
+					name: 'example_tool',
+					description: 'An example tool that echoes back the input',
+					inputSchema: zodToJsonSchema(ExampleToolSchema),
+				},
+			],
+		};
+	});
+
+	/**
+	 * Register handler for executing tool calls
+	 * @param request - The tool call request containing tool name and arguments
+	 * @returns Tool execution result
+	 */
+	server.setRequestHandler(CallToolRequestSchema, async (request) => {
+		const { name, arguments: args } = request.params;
+
+		switch (name) {
+			case 'example_tool':
+				return await exampleTool(args);
+			default:
+				throw new Error(`Unknown tool: ${name}`);
+		}
+	});
+
+	/**
+	 * Start the MCP server using stdio transport
+	 */
+	const transport = new StdioServerTransport();
+	await server.connect(transport);
+
+	/**
+	 * Handle graceful shutdown on SIGINT (Ctrl+C)
+	 */
+	process.on('SIGINT', async () => {
+		await server.close();
+		process.exit(0);
+	});
+}
+
+// Start the application
+main().catch(console.error);
