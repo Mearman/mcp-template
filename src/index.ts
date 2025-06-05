@@ -10,6 +10,12 @@ import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprot
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { createCLI } from './cli.js';
 import { ExampleToolSchema, exampleTool } from './tools/example.js';
+import {
+	ConfigureFetchSchema,
+	FetchExampleSchema,
+	configureFetchTool,
+	fetchExampleTool,
+} from './tools/fetch-example.js';
 
 /**
  * Determine if we're running in CLI mode
@@ -64,6 +70,18 @@ export async function startMcpServer() {
 					description: 'An example tool that echoes back the input',
 					inputSchema: zodToJsonSchema(ExampleToolSchema),
 				},
+				{
+					name: 'fetch_example',
+					description:
+						'Demonstrate configurable fetch patterns with different backends and caching',
+					inputSchema: zodToJsonSchema(FetchExampleSchema),
+				},
+				{
+					name: 'configure_fetch',
+					description:
+						'Configure the global fetch instance settings and caching behavior',
+					inputSchema: zodToJsonSchema(ConfigureFetchSchema),
+				},
 			],
 		};
 	});
@@ -79,6 +97,10 @@ export async function startMcpServer() {
 		switch (name) {
 			case 'example_tool':
 				return await exampleTool(args);
+			case 'fetch_example':
+				return await fetchExampleTool(args);
+			case 'configure_fetch':
+				return await configureFetchTool(args);
 			default:
 				throw new Error(`Unknown tool: ${name}`);
 		}
