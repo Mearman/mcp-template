@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/Mearman/mcp-template/compare/v1.1.0...v1.1.1) (2025-06-05)
+
+
+### Bug Fixes
+
+* configure semantic-release to publish to GitHub Packages instead of npmjs ([c190d30](https://github.com/Mearman/mcp-template/commit/c190d30845371221014cee9620cc16f819452930))
+* update yarn.lock for scoped package name ([b612a40](https://github.com/Mearman/mcp-template/commit/b612a40d3347794623f0facaeede9c0322348b62))
+
 # [1.1.0](https://github.com/Mearman/mcp-template/compare/v1.0.0...v1.1.0) (2025-06-05)
 
 
