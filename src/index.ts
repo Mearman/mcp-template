@@ -15,13 +15,15 @@ import { ExampleToolSchema, exampleTool } from './tools/example.js';
  * Determine if we're running in CLI mode
  * CLI mode is detected when command line arguments are provided beyond node and script name
  */
-const isCliMode = process.argv.length > 2;
+export function isCliMode() {
+	return process.argv.length > 2;
+}
 
 /**
  * Main entry point that handles both MCP and CLI modes
  */
-async function main() {
-	if (isCliMode) {
+export async function main() {
+	if (isCliMode()) {
 		// CLI Mode: Run as command-line tool
 		const program = createCLI();
 		await program.parseAsync(process.argv);
@@ -34,7 +36,7 @@ async function main() {
 /**
  * Start the MCP server with all configured tools and handlers
  */
-async function startMcpServer() {
+export async function startMcpServer() {
 	/**
 	 * Create the MCP server instance with configured capabilities
 	 */

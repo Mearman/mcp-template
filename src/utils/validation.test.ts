@@ -68,4 +68,17 @@ describe('validateInput', () => {
 	it('should throw formatted error for invalid input', () => {
 		expect(() => validateInput(urlSchema, 'invalid')).toThrow('Validation failed');
 	});
+
+	it('should re-throw non-ZodError errors', () => {
+		// Create a schema that throws a non-ZodError
+		const faultySchema = {
+			parse: () => {
+				throw new Error('Not a ZodError');
+			},
+		};
+
+		expect(() =>
+			validateInput(faultySchema as { parse: (input: unknown) => unknown }, 'input'),
+		).toThrow('Not a ZodError');
+	});
 });
