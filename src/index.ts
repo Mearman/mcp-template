@@ -11,7 +11,7 @@ import { exampleTool, ExampleToolSchema } from './tools/example.js';
 
 const server = new Server(
   {
-    name: 'mcp-server-template',
+    name: 'mcp-template',
     version: '0.1.0',
   },
   {
