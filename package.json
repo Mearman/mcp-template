@@ -11,17 +11,12 @@
 		"test:watch": "vitest --watch",
 		"test:ci": "vitest run --coverage --reporter=json --reporter=default",
 		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
 		"format": "biome format --write .",
 		"prepare": "husky",
 		"start": "node dist/index.js"
 	},
-	"keywords": [
-		"mcp",
-		"model-context-protocol",
-		"typescript",
-		"template",
-		"mcp-server"
-	],
+	"keywords": ["mcp", "model-context-protocol", "typescript", "template", "mcp-server"],
 	"author": "",
 	"license": "MIT",
 	"repository": {
