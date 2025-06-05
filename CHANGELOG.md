@@ -4,6 +4,22 @@
 ### Bug Fixes
 
 * make NPM publishing optional in workflows ([ee1dcd8](https://github.com/Mearman/mcp-template/commit/ee1dcd8575fca4f7728fa2f863c9d11f68258264))
+* reset version for semantic-release to manage ([b678a55](https://github.com/Mearman/mcp-template/commit/b678a553b01069f1b2ff343b3ce581c00fc6b492))
+* update package name and repository URL to mcp-template ([83200f0](https://github.com/Mearman/mcp-template/commit/83200f05a75c977741c357fe5d6363bd10e9026c))
+* update yarn.lock with template dependencies ([975488f](https://github.com/Mearman/mcp-template/commit/975488f6ab01c04b2bbc1e6dbec43aad0d1d3991))
+
+
+### Features
+
+* add template source code structure ([855886d](https://github.com/Mearman/mcp-template/commit/855886d044358e5f8c24f839fa6c1845a0c64368))
+* initial MCP TypeScript template setup ([f6ab775](https://github.com/Mearman/mcp-template/commit/f6ab77580ef2c3d166b0a65bdbf8ca42f79c51a0))
+
+# 1.0.0 (2025-06-05)
+
+
+### Bug Fixes
+
+* make NPM publishing optional in workflows ([ee1dcd8](https://github.com/Mearman/mcp-template/commit/ee1dcd8575fca4f7728fa2f863c9d11f68258264))
 * update package name and repository URL to mcp-template ([83200f0](https://github.com/Mearman/mcp-template/commit/83200f05a75c977741c357fe5d6363bd10e9026c))
 * update yarn.lock with template dependencies ([975488f](https://github.com/Mearman/mcp-template/commit/975488f6ab01c04b2bbc1e6dbec43aad0d1d3991))
 
