@@ -1,300 +1,150 @@
 # MCP Template
 
-[![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg)](https://github.com/Mearman/mcp-template/releases)
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-## Build Status
-[![CI Build](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml)
+[![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml)
 [![Coverage](.github/badges/coverage.svg)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml)
 
-## Release Status
-[![Release](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml)
-[![Template Sync](https://github.com/Mearman/mcp-template/actions/workflows/template-sync-dispatch.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/template-sync-dispatch.yml)
+TypeScript template for building MCP (Model Context Protocol) servers with automated template synchronization.
 
-A TypeScript template for building MCP (Model Context Protocol) servers with automated template synchronization to downstream repositories.
+## MCP Server Ecosystem
 
-## Derived Repositories Status
-
-### 🗃️ [mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine)
-[![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml)
-[![Release](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml)
-[![npm](https://img.shields.io/npm/v/mcp-wayback-machine.svg)](https://www.npmjs.com/package/mcp-wayback-machine)
-
-MCP server for interacting with the Internet Archive's Wayback Machine.
-
-### 📚 [mcp-openalex](https://github.com/Mearman/mcp-openalex)
-[![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml)
-[![Release](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml)
-[![npm](https://img.shields.io/npm/v/mcp-openalex.svg)](https://www.npmjs.com/package/mcp-openalex)
-
-MCP server for accessing OpenAlex academic knowledge graph.
-
-### 🔧 [mcp-mcp](https://github.com/Mearman/mcp-mcp)
-[![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml)
-[![Release](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml)
-[![npm](https://img.shields.io/npm/v/mcp-mcp.svg)](https://www.npmjs.com/package/mcp-mcp)
-
-MCP server template with example implementations.
-
-### 🤖 [mcp-ollama](https://github.com/Mearman/mcp-ollama)
-[![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml)
-[![Release](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml)
-[![npm](https://img.shields.io/npm/v/mcp-ollama.svg)](https://www.npmjs.com/package/mcp-ollama)
-
-MCP server for interacting with Ollama models.
-
-### 📊 Status Overview
-
-| Repository | CI Status | Release Workflow | GitHub Release | NPM Version | Coverage |
-|------------|-----------|------------------|----------------|-------------|----------|
-| [mcp-template](https://github.com/Mearman/mcp-template) | [![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml) | [![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg)](https://github.com/Mearman/mcp-template/releases) | ![Not published](https://img.shields.io/badge/npm-not%20published-lightgrey) | ![Coverage](.github/badges/coverage.svg) |
-| [mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine) | [![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml) | [![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-wayback-machine.svg)](https://github.com/Mearman/mcp-wayback-machine/releases) | [![npm](https://img.shields.io/npm/v/mcp-wayback-machine.svg)](https://www.npmjs.com/package/mcp-wayback-machine) | ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen) |
-| [mcp-openalex](https://github.com/Mearman/mcp-openalex) | [![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml) | [![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-openalex.svg)](https://github.com/Mearman/mcp-openalex/releases) | [![npm](https://img.shields.io/npm/v/mcp-openalex.svg)](https://www.npmjs.com/package/mcp-openalex) | ![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen) |
-| [mcp-mcp](https://github.com/Mearman/mcp-mcp) | [![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml) | [![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-mcp.svg)](https://github.com/Mearman/mcp-mcp/releases) | [![npm](https://img.shields.io/npm/v/mcp-mcp.svg)](https://www.npmjs.com/package/mcp-mcp) | ![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen) |
-| [mcp-ollama](https://github.com/Mearman/mcp-ollama) | [![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml) | [![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-ollama.svg)](https://github.com/Mearman/mcp-ollama/releases) | [![npm](https://img.shields.io/npm/v/mcp-ollama.svg)](https://www.npmjs.com/package/mcp-ollama) | ![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) |
-
-## Features
-
-- 🚀 **TypeScript with ES Modules** - Modern JavaScript with full type safety
-- 🧪 **Comprehensive Testing** - Vitest with coverage reporting
-- 🔧 **Code Quality** - Biome for linting and formatting
-- 📦 **Automated Publishing** - Semantic versioning and NPM publishing
-- 🔄 **Template Synchronization** - Automatic updates to derived repositories
-- 🛠️ **Development Tools** - Hot reload, watch mode, and CLI support
-- 📋 **Git Hooks** - Automated linting and commit message validation
+| Repository | CI | Release | NPM | Coverage |
+|------------|:--:|:-------:|:---:|:-------:|
+| **[mcp-template](https://github.com/Mearman/mcp-template)**<br/>Base template repository | ![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg) | *Template* | ![Coverage](.github/badges/coverage.svg) |
+| **[mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine)**<br/>Internet Archive integration | ![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-wayback-machine.svg) | ![npm](https://img.shields.io/npm/v/mcp-wayback-machine.svg) | ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen) |
+| **[mcp-openalex](https://github.com/Mearman/mcp-openalex)**<br/>Academic knowledge graph | ![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-openalex.svg) | ![npm](https://img.shields.io/npm/v/mcp-openalex.svg) | ![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen) |
+| **[mcp-mcp](https://github.com/Mearman/mcp-mcp)**<br/>Template with examples | ![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-mcp.svg) | ![npm](https://img.shields.io/npm/v/mcp-mcp.svg) | ![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen) |
+| **[mcp-ollama](https://github.com/Mearman/mcp-ollama)**<br/>Ollama model integration | ![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-ollama.svg) | ![npm](https://img.shields.io/npm/v/mcp-ollama.svg) | ![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) |
 
 ## Quick Start
 
-### Using as Template
+```bash
+# Use this template on GitHub, then:
+git clone https://github.com/yourusername/your-mcp-server.git
+cd your-mcp-server
+yarn install
+yarn dev
+```
 
-1. **Use this template** on GitHub to create your new MCP server repository
-2. **Clone your new repository**:
-   ```bash
-   git clone https://github.com/yourusername/your-mcp-server.git
-   cd your-mcp-server
-   ```
-3. **Install dependencies**:
-   ```bash
-   yarn install
-   ```
-4. **Update configuration**:
-   - Edit `package.json` with your server name and details
-   - Update `src/index.ts` server name and version
-   - Replace example tools in `src/tools/` with your implementations
+## Core Features
 
-### Development
+- **TypeScript + ES Modules** - Modern development with full type safety
+- **Automated Testing** - Vitest with coverage reporting and CI integration
+- **Code Quality** - Biome linting/formatting with pre-commit hooks
+- **Template Sync** - Automatic updates to all derived repositories
+- **Semantic Releases** - Automated versioning and NPM publishing
+- **Repository Management** - Scripts for managing the entire ecosystem
+
+## Development Commands
 
 ```bash
-# Start development server with hot reload
-yarn dev
-
-# Run tests
-yarn test
-
-# Run tests in watch mode
-yarn test:watch
-
-# Build the project
-yarn build
-
-# Run linting
-yarn lint
-
-# Auto-fix linting issues
-yarn lint:fix
+yarn dev          # Hot reload development server
+yarn test         # Run tests with coverage
+yarn test:watch   # Watch mode for development
+yarn build        # Compile TypeScript
+yarn lint         # Check code quality
+yarn lint:fix     # Auto-fix linting issues
 ```
 
-## Template Structure
-
-```
-mcp-template/
-├── src/
-│   ├── index.ts              # MCP server entry point
-│   ├── tools/
-│   │   ├── example.ts        # Example tool implementation
-│   │   └── example.test.ts   # Example tool tests
-│   └── utils/
-│       ├── validation.ts     # Common validation schemas
-│       └── fetch.ts          # HTTP utilities with caching
-├── .github/
-│   └── workflows/
-│       ├── ci.yml            # Continuous Integration
-│       ├── semantic-release.yml  # Automated versioning
-│       └── template-sync-*.yml   # Template synchronization
-├── .template-marker          # Template tracking file
-├── .template-version         # Template version tracking
-└── shared/                   # Shared utilities for template sync
-```
-
-## Writing MCP Tools
-
-### Basic Tool Example
+## Creating MCP Tools
 
 ```typescript
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 
-// Define input schema
+// Define tool schema
 export const MyToolSchema = z.object({
   input: z.string().describe('Input parameter'),
-  count: z.number().optional().default(1).describe('Number of iterations'),
 });
 
-export type MyToolInput = z.infer<typeof MyToolSchema>;
-
-// Export tool schema for MCP registration
+// Create tool definition
 export const myToolSchema = {
   name: 'my_tool',
-  description: 'Description of what this tool does',
+  description: 'Tool description',
   inputSchema: zodToJsonSchema(MyToolSchema),
 };
 
-// Tool implementation
+// Implement tool
 export async function myTool(input: unknown) {
-  const validated = MyToolSchema.parse(input);
-  
-  // Your tool logic here
-  const result = `Processed: ${validated.input}`;
-  
+  const { input: userInput } = MyToolSchema.parse(input);
   return {
-    content: [
-      {
-        type: 'text',
-        text: result,
-      },
-    ],
+    content: [{ type: 'text', text: `Processed: ${userInput}` }],
   };
 }
 ```
 
-### Register Tools in MCP Server
+Register in `src/index.ts`:
 
 ```typescript
-// In src/index.ts
-import { myToolSchema, myTool } from './tools/my-tool.js';
-
-// Register in ListToolsRequestSchema handler
+// List tools
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
-  tools: [
-    myToolSchema,
-    // ... other tools
-  ],
+  tools: [myToolSchema],
 }));
 
-// Register in CallToolRequestSchema handler
+// Handle execution
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  const { name, arguments: args } = request.params;
-  
-  switch (name) {
-    case 'my_tool':
-      return await myTool(args);
-    // ... other tools
-    default:
-      throw new Error(`Unknown tool: ${name}`);
+  switch (request.params.name) {
+    case 'my_tool': return await myTool(request.params.arguments);
+    default: throw new Error(`Unknown tool: ${request.params.name}`);
   }
 });
 ```
 
 ## Template Synchronization
 
-This template includes an automated synchronization system that keeps derived repositories up to date:
+Automatically syncs template updates to all derived repositories:
 
-### How It Works
+- **Auto-discovery** of repositories created from this template
+- **Selective sync** of configuration files and shared utilities
+- **Pull request workflow** for reviewing changes
+- **Version tracking** across the ecosystem
 
-1. **Template Changes**: When you update the template repository
-2. **Automatic Discovery**: GitHub Actions discovers all repositories created from this template
-3. **Sync Dispatch**: Template changes are automatically synchronized to derived repos
-4. **Pull Request Creation**: Changes are proposed via pull requests for review
-
-### Template Marker
-
-The `.template-marker` file identifies repositories created from this template:
-
-```yaml
-template_repository: mcp-template
-template_version: 1.0.0
-created_from_template: true
-sync_enabled: true
-```
-
-### Customizing Sync Behavior
-
-Edit `.github/template-sync-config.yml` to control what gets synchronized:
+Configure in `.github/template-sync-config.yml`:
 
 ```yaml
 sync_patterns:
   - "tsconfig.json"
-  - "biome.json" 
-  - "vitest.config.ts"
   - ".github/workflows/**"
-  - "src/utils/validation*"
-  # Add patterns for files to sync
+  - "src/utils/**"
 
 ignore_patterns:
-  - "src/tools/**"  # Don't sync tool implementations
-  - "README.md"     # Keep custom README
-  # Add patterns for files to ignore
-```
-
-## CI/CD Pipeline
-
-### Continuous Integration
-
-- **Code Quality**: Linting, formatting, and type checking
-- **Testing**: Unit tests with coverage reporting
-- **Build Verification**: Ensures TypeScript compiles successfully
-- **Multi-Node Testing**: Tests on Node.js 18, 20, and 22
-
-### Automated Release
-
-- **Semantic Versioning**: Automatic version bumping based on commit messages
-- **Changelog Generation**: Automatically generated from commit history
-- **NPM Publishing**: Automatic package publishing on release
-- **GitHub Releases**: Automatic GitHub release creation
-
-### Commit Message Format
-
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-feat: add new tool for data processing
-fix: resolve validation error in example tool
-docs: update README with usage examples
-chore: update dependencies
+  - "src/tools/**"
+  - "README.md"
 ```
 
 ## Repository Management
 
-This template includes management scripts for maintaining multiple MCP repositories:
-
-### Quick Start
 ```bash
-# Interactive management menu
-./mcp-manager.sh
-
-# Or use individual scripts
-./scripts/check-ci-status.sh        # Check CI status across repos
-./scripts/trigger-template-sync.sh   # Sync template changes
-./scripts/check-template-sync-prs.sh # Monitor sync PRs
-./scripts/run-all-tests.sh          # Run tests across all repos
+./mcp-manager.sh                      # Interactive management menu
+./scripts/check-ci-status.sh          # Check CI across all repos
+./scripts/trigger-template-sync.sh    # Force template sync
+./scripts/run-all-tests.sh           # Test all repositories
 ```
 
-See [scripts/README.md](scripts/README.md) for detailed documentation.
+## CI/CD
 
-## Contributing
+- **Quality Gates**: Linting, type checking, testing on multiple Node.js versions
+- **Semantic Releases**: Automatic versioning from conventional commits
+- **NPM Publishing**: Automated package publishing with provenance
+- **GitHub Releases**: Generated releases with changelogs
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'feat: add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+## Project Structure
+
+```
+mcp-template/
+├── src/
+│   ├── index.ts              # MCP server entry point
+│   ├── tools/                # Tool implementations
+│   └── utils/                # Shared utilities
+├── .github/workflows/        # CI/CD pipelines
+├── scripts/                  # Management tools
+└── .template-marker          # Template identification
+```
 
 ## License
 
-This project is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-## Related Projects
+## Resources
 
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
