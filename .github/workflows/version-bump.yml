@@ -1,22 +1,7 @@
 name: Template Version Management
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'tsconfig.json'
-      - 'biome.json'
-      - 'vitest.config.ts'
-      - '.editorconfig'
-      - '.gitignore'
-      - '.yarnrc.yml'
-      - 'package.json'
-      - '.github/workflows/**'
-      - '.husky/**'
-      - 'commitlint.config.js'
-      - 'src/tools/example*'
-      - 'src/utils/validation*'
-      - '.github/template-sync-config.yml'
+  # Only run on manual dispatch for now to avoid conflicts with semantic-release
   workflow_dispatch:
     inputs:
       version_type:
@@ -103,21 +88,25 @@ jobs:
           // Write updated version
           fs.writeFileSync(versionFile, JSON.stringify(updatedData, null, 2));
           
-          // Update template sync config
-          const syncConfig = fs.readFileSync('.github/template-sync-config.yml', 'utf8');
-          const updatedSyncConfig = syncConfig.replace(
-            /template_version: "[^"]*"/,
-            `template_version: "${newVersion}"`
-          );
-          fs.writeFileSync('.github/template-sync-config.yml', updatedSyncConfig);
+          // Update template sync config if it exists
+          if (fs.existsSync('.github/template-sync-config.yml')) {
+            const syncConfig = fs.readFileSync('.github/template-sync-config.yml', 'utf8');
+            const updatedSyncConfig = syncConfig.replace(
+              /template_version: "[^"]*"/,
+              `template_version: "${newVersion}"`
+            );
+            fs.writeFileSync('.github/template-sync-config.yml', updatedSyncConfig);
+          }
           
-          // Update template marker
-          const markerContent = fs.readFileSync('.template-marker', 'utf8');
-          const updatedMarker = markerContent.replace(
-            /template_version: [^\n]*/,
-            `template_version: ${newVersion}`
-          );
-          fs.writeFileSync('.template-marker', updatedMarker);
+          // Update template marker if it exists
+          if (fs.existsSync('.template-marker')) {
+            const markerContent = fs.readFileSync('.template-marker', 'utf8');
+            const updatedMarker = markerContent.replace(
+              /template_version: [^\n]*/,
+              `template_version: ${newVersion}`
+            );
+            fs.writeFileSync('.template-marker', updatedMarker);
+          }
           
           console.log(`Version updated: ${currentVersion} → ${newVersion}`);
           console.log(`new_version=${newVersion}`);

@@ -1,6 +1,7 @@
 name: Handle Template Sync
 
 # This workflow runs in derived repositories to handle incoming template syncs
+# It should NOT run in the template repository itself
 on:
   repository_dispatch:
     types: [template-sync]
@@ -19,6 +20,8 @@ on:
 jobs:
   sync-template:
     runs-on: ubuntu-latest
+    # Skip this workflow if running in the template repository itself
+    if: github.repository != 'Mearman/mcp-template'
     steps:
       - name: Checkout current repo
         uses: actions/checkout@v4
