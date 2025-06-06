@@ -1,12 +1,29 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-01-06T00:00:00Z",
+  "last_updated": "2025-06-06T01:08:00Z",
   "changes": [
-    "Added CI-driven template synchronization",
-    "Implemented automatic repo discovery",
-    "Added intelligent file merging",
-    "Created version tracking system"
+    "Template synchronization system with breaking changes",
+    "Advanced template sync workflows",
+    "Configurable fetch utility with multiple backends",
+    "CLI support for dual MCP/CLI mode",
+    "Comprehensive testing and validation"
   ],
-  "breaking_changes": [],
-  "migration_notes": []
+  "breaking_changes": [
+    "Template structure reorganized for better sync support",
+    "Shared utilities moved to dedicated directories",
+    "Template sync configuration required for derived projects"
+  ],
+  "migration_notes": [
+    "Update .template-marker file with project information",
+    "Configure template sync settings in .github/template-sync-config.yml",
+    "Review shared utilities integration"
+  ],
+  "previous_versions": [
+    {
+      "version": "1.1.1",
+      "date": "2025-06-05T12:00:00Z",
+      "changes": ["Initial MCP template setup", "Basic CI/CD workflows"]
+    }
+  ]
 }
+EOF < /dev/null

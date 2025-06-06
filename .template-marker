@@ -1,8 +1,39 @@
-# MCP Template Repository Marker
-# This file identifies repositories created from the mcp-template
-# DO NOT DELETE - Required for automatic template synchronization
+# MCP Template Marker
+# This file identifies repositories created from the MCP template
+# and enables automatic template synchronization
 
-template_repo: mcp-template
+template_name: mcp-template
+template_repository: https://github.com/Mearman/mcp-template
 template_version: 2.0.0
-created_date: 2025-01-06
+created_date: 2025-06-06T01:08:00Z
 sync_enabled: true
+
+# Template information
+template_description: Template for building MCP (Model Context Protocol) servers with TypeScript
+template_features:
+  - TypeScript with strict mode
+  - Vitest testing framework
+  - GitHub Actions CI/CD
+  - Semantic release automation
+  - Biome linting and formatting
+  - Husky git hooks
+  - MCP SDK integration
+  - CLI support (optional)
+  - Comprehensive documentation
+
+# Sync configuration
+sync_config_file: .github/template-sync-config.yml
+last_sync_date: 2025-06-06T01:08:00Z
+last_sync_version: 2.0.0
+
+# Project customization markers
+# These help the sync process preserve project-specific changes
+customization_markers:
+  - README.md
+  - package.json (name, version, description, author, repository)
+  - LICENSE
+  - CHANGELOG.md
+  - src/index.ts
+  - src/cli.ts
+  - src/tools/ (except examples)
+EOF < /dev/null
