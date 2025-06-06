@@ -5,6 +5,7 @@
 
 ## Build Status
 [![CI Build](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml)
+[![Coverage](.github/badges/coverage.svg)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml)
 
 ## Release Status

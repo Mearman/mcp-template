@@ -70,6 +70,9 @@ sync_files:
   - path: ".github/workflows/ci.yml"
     action: "replace"
     
+  - path: ".github/workflows/coverage-badge.yml"
+    action: "replace"
+    
   - path: ".github/workflows/semantic-release.yml"
     action: "template"
     substitutions:

@@ -1,0 +1,66 @@
+name: Coverage Badge
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run tests with coverage
+        run: yarn test:ci
+
+      - name: Generate coverage badge
+        run: |
+          # Extract coverage percentage from summary
+          if [ -f coverage/coverage-summary.json ]; then
+            COVERAGE=$(node -e "
+              const summary = require('./coverage/coverage-summary.json');
+              const total = summary.total.lines.pct;
+              console.log(Math.round(total));
+            ")
+            
+            # Determine color based on coverage
+            if [ $COVERAGE -ge 80 ]; then
+              COLOR="brightgreen"
+            elif [ $COVERAGE -ge 60 ]; then
+              COLOR="yellow"
+            else
+              COLOR="red"
+            fi
+            
+            # Create badge directory
+            mkdir -p .github/badges
+            
+            # Generate badge using shields.io
+            curl -s "https://img.shields.io/badge/coverage-${COVERAGE}%25-${COLOR}" > .github/badges/coverage.svg
+            
+            # Check if badge changed
+            if [[ -n $(git status --porcelain .github/badges/coverage.svg) ]]; then
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add .github/badges/coverage.svg
+              git commit -m "chore: update coverage badge [skip ci]"
+              git push
+            fi
+          fi
