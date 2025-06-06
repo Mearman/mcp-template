@@ -224,6 +224,24 @@ docs: update README with usage examples
 chore: update dependencies
 ```
 
+## Repository Management
+
+This template includes management scripts for maintaining multiple MCP repositories:
+
+### Quick Start
+```bash
+# Interactive management menu
+./mcp-manager.sh
+
+# Or use individual scripts
+./scripts/check-ci-status.sh        # Check CI status across repos
+./scripts/trigger-template-sync.sh   # Sync template changes
+./scripts/check-template-sync-prs.sh # Monitor sync PRs
+./scripts/run-all-tests.sh          # Run tests across all repos
+```
+
+See [scripts/README.md](scripts/README.md) for detailed documentation.
+
 ## Contributing
 
 1. Fork the repository

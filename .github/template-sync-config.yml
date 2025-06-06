@@ -104,6 +104,13 @@ sync_files:
   - path: "src/utils/validation.test.ts"
     action: "merge_utils"
 
+  # Management scripts
+  - path: "scripts/"
+    action: "replace"
+    
+  - path: "mcp-manager.sh"
+    action: "replace"
+
 # Files to never sync (project-specific)
 ignore_files:
   - "README.md"
