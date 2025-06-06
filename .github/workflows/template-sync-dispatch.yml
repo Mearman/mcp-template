@@ -67,9 +67,9 @@ jobs:
             }
             
             // Discover repos created from this template
-            const { data: repos } = await octokit.rest.repos.listForOrg({
-              org: 'Mearman',
-              type: 'public'
+            const { data: repos } = await octokit.rest.repos.listForUser({
+              username: 'Mearman',
+              type: 'owner'
             });
             
             const mcpRepos = [];
