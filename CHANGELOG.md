@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/Mearman/mcp-template/compare/v1.0.0...v1.1.0) (2025-06-06)
+
+
+### Bug Fixes
+
+* improve template sync workflow reliability ([4fc7288](https://github.com/Mearman/mcp-template/commit/4fc728804e179b995660f904476424430cb698c1))
+
+
+### Features
+
+* add template synchronization configuration files ([9226e42](https://github.com/Mearman/mcp-template/commit/9226e42619edaaa74603ea29a2f7a5a188210866))
+
 # 1.0.0 (2025-06-06)
 
 
