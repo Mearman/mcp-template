@@ -369,4 +369,4 @@ DEBUG=* node dist/index.js
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Creating MCP Servers Guide](https://modelcontextprotocol.io/tutorials/building-servers)
 - [Awesome MCP Servers](https://github.com/modelcontextprotocol/awesome-mcp) - Community-curated list
-- [MCP Discord](https://discord.gg/mcp) - Get help and share your servers
+- [MCP Discord](https://discord.gg/mcp) - Get help and share your servers# Trigger CI
