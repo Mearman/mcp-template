@@ -1,6 +1,6 @@
 {
 	"name": "mcp-template",
-	"version": "1.1.1",
+	"version": "1.0.0",
 	"description": "Template for building MCP (Model Context Protocol) servers with TypeScript",
 	"main": "dist/index.js",
 	"type": "module",
@@ -18,7 +18,13 @@
 		"prepublishOnly": "npm test && npm run build",
 		"start": "node dist/index.js"
 	},
-	"keywords": ["mcp", "model-context-protocol", "typescript", "template", "mcp-server"],
+	"keywords": [
+		"mcp",
+		"model-context-protocol",
+		"typescript",
+		"template",
+		"mcp-server"
+	],
 	"author": "Joseph Mearman",
 	"license": "CC-BY-NC-SA-4.0",
 	"repository": {
