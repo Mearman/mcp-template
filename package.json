@@ -1,13 +1,10 @@
 {
-	"name": "mcp-wayback-machine",
-	"version": "1.0.0",
-	"description": "MCP server and CLI tool for interacting with the Wayback Machine without API keys",
+	"name": "mcp-ollama",
+	"version": "0.1.0",
+	"description": "MCP server for Ollama local LLM integration",
 	"main": "dist/index.js",
 	"type": "module",
-	"bin": {
-		"mcp-wayback-machine": "dist/index.js",
-		"wayback": "dist/index.js"
-	},
+	"bin": "dist/index.js",
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsx watch src/index.ts",
@@ -23,19 +20,18 @@
 	},
 	"keywords": [
 		"mcp",
-		"wayback",
-		"wayback-machine",
-		"internet-archive",
-		"archival",
-		"web-archive",
+		"model-context-protocol",
+		"ollama",
+		"llm",
+		"local-llm",
 		"mcp-server",
-		"model-context-protocol"
+		"typescript"
 	],
 	"author": "Joseph Mearman",
 	"license": "CC-BY-NC-SA-4.0",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Mearman/mcp-wayback-machine.git"
+		"url": "git+https://github.com/Mearman/mcp-ollama.git"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -53,10 +49,8 @@
 	],
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "^1.12.1",
-		"chalk": "^5.4.1",
-		"commander": "^14.0.0",
-		"ora": "^8.2.0",
-		"zod": "^3.25.51"
+		"zod": "^3.25.51",
+		"zod-to-json-schema": "^3.24.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
