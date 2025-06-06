@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/Mearman/mcp-template/compare/v1.1.0...v1.1.1) (2025-06-06)
+
+
+### Bug Fixes
+
+* resolve ES module issue in template sync dispatch ([fad9a89](https://github.com/Mearman/mcp-template/commit/fad9a89ff3f1d27c3fd62e31146791c6e690e3b3))
+* use curl and python instead of octokit for template sync discovery ([8676a06](https://github.com/Mearman/mcp-template/commit/8676a068a898204e103ddd2b752b19d195fb8e0a))
+
 # [1.1.0](https://github.com/Mearman/mcp-template/compare/v1.0.0...v1.1.0) (2025-06-06)
 
 
