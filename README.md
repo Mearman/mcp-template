@@ -70,11 +70,9 @@ yarn lint:fix
 mcp-template/
 ├── src/
 │   ├── index.ts              # MCP server entry point
-│   ├── cli.ts                # CLI entry point (optional)
 │   ├── tools/
 │   │   ├── example.ts        # Example tool implementation
-│   │   ├── example.test.ts   # Example tool tests
-│   │   └── fetch-example.ts  # HTTP fetch example tool
+│   │   └── example.test.ts   # Example tool tests
 │   └── utils/
 │       ├── validation.ts     # Common validation schemas
 │       └── fetch.ts          # HTTP utilities with caching
