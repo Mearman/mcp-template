@@ -18,7 +18,13 @@
 		"prepublishOnly": "npm test && npm run build",
 		"start": "node dist/index.js"
 	},
-	"keywords": ["mcp", "model-context-protocol", "typescript", "template", "mcp-server"],
+	"keywords": [
+		"mcp",
+		"model-context-protocol",
+		"typescript",
+		"template",
+		"mcp-server"
+	],
 	"author": "Joseph Mearman",
 	"license": "CC-BY-NC-SA-4.0",
 	"repository": {
