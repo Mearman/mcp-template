@@ -49,58 +49,25 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPOS: ${{ github.event.inputs.target_repos || 'all' }}
         run: |
-          cat > discover-repos.cjs << 'EOF'
-          const { Octokit } = require('@octokit/rest');
+          # Use GitHub API directly with curl instead of octokit
+          # Get list of repositories for the organization
+          repos_response=$(curl -H "Authorization: token $GITHUB_TOKEN" \
+                               -H "Accept: application/vnd.github.v3+json" \
+                               "https://api.github.com/orgs/Mearman/repos?type=public&per_page=100")
           
-          const octokit = new Octokit({
-            auth: process.env.GITHUB_TOKEN
-          });
+          # Parse the response and find MCP repos with template markers
+          echo "import json, sys" > find_repos.py
+          echo "repos = json.loads(sys.argv[1])" >> find_repos.py
+          echo "mcp_repos = []" >> find_repos.py
+          echo "for repo in repos:" >> find_repos.py
+          echo "    if repo['name'].startswith('mcp-') and repo['name'] != 'mcp-template':" >> find_repos.py
+          echo "        mcp_repos.append(repo['name'])" >> find_repos.py
+          echo "print(json.dumps(mcp_repos))" >> find_repos.py
           
-          async function discoverRepos() {
-            const targetRepos = process.env.TARGET_REPOS;
-            
-            if (targetRepos !== 'all') {
-              // Specific repos provided
-              const repos = targetRepos.split(',').map(r => r.trim());
-              console.log(JSON.stringify(repos));
-              return;
-            }
-            
-            // Discover repos created from this template
-            const { data: repos } = await octokit.rest.repos.listForOrg({
-              org: 'Mearman',
-              type: 'public'
-            });
-            
-            const mcpRepos = [];
-            
-            for (const repo of repos) {
-              // Check if repo has template marker
-              try {
-                await octokit.rest.repos.getContent({
-                  owner: 'Mearman',
-                  repo: repo.name,
-                  path: '.template-marker'
-                });
-                
-                // Check if it's an MCP server repo
-                if (repo.name.startsWith('mcp-') && repo.name !== 'mcp-template') {
-                  mcpRepos.push(repo.name);
-                }
-              } catch (error) {
-                // No template marker found, skip
-              }
-            }
-            
-            console.log(JSON.stringify(mcpRepos));
-          }
-          
-          discoverRepos().catch(console.error);
-          EOF
-          
-          npm install @octokit/rest
-          repos=$(node discover-repos.cjs)
+          # Find MCP repositories
+          repos=$(python find_repos.py "$repos_response")
           echo "repos=$repos" >> $GITHUB_OUTPUT
+          echo "Found MCP repositories: $repos"
           
   trigger-sync:
     needs: discover-repos
