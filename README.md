@@ -14,6 +14,46 @@
 
 A TypeScript template for building MCP (Model Context Protocol) servers with automated template synchronization to downstream repositories.
 
+## Derived Repositories Status
+
+### 🗃️ [mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine)
+[![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml)
+[![Release](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml)
+[![npm](https://img.shields.io/npm/v/@mearman/mcp-wayback-machine.svg)](https://www.npmjs.com/package/@mearman/mcp-wayback-machine)
+
+MCP server for interacting with the Internet Archive's Wayback Machine.
+
+### 📚 [mcp-openalex](https://github.com/Mearman/mcp-openalex)
+[![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml)
+[![Release](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml)
+[![npm](https://img.shields.io/npm/v/@mearman/mcp-openalex.svg)](https://www.npmjs.com/package/@mearman/mcp-openalex)
+
+MCP server for accessing OpenAlex academic knowledge graph.
+
+### 🔧 [mcp-mcp](https://github.com/Mearman/mcp-mcp)
+[![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml)
+[![Release](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml)
+[![npm](https://img.shields.io/npm/v/@mearman/mcp-mcp.svg)](https://www.npmjs.com/package/@mearman/mcp-mcp)
+
+MCP server template with example implementations.
+
+### 🤖 [mcp-ollama](https://github.com/Mearman/mcp-ollama)
+[![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml)
+[![Release](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml)
+[![npm](https://img.shields.io/npm/v/@mearman/mcp-ollama.svg)](https://www.npmjs.com/package/@mearman/mcp-ollama)
+
+MCP server for interacting with Ollama models.
+
+### 📊 Status Overview
+
+| Repository | CI Status | Release | NPM Version | Coverage | License |
+|------------|-----------|---------|-------------|----------|---------|
+| [mcp-template](https://github.com/Mearman/mcp-template) | [![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/mcp-template.svg)](https://www.npmjs.com/package/mcp-template) | ![Coverage](.github/badges/coverage.svg) | ![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) |
+| [mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine) | [![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/@mearman/mcp-wayback-machine.svg)](https://www.npmjs.com/package/@mearman/mcp-wayback-machine) | ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen) | ![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) |
+| [mcp-openalex](https://github.com/Mearman/mcp-openalex) | [![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/@mearman/mcp-openalex.svg)](https://www.npmjs.com/package/@mearman/mcp-openalex) | ![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen) | ![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) |
+| [mcp-mcp](https://github.com/Mearman/mcp-mcp) | [![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/@mearman/mcp-mcp.svg)](https://www.npmjs.com/package/@mearman/mcp-mcp) | ![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen) | ![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) |
+| [mcp-ollama](https://github.com/Mearman/mcp-ollama) | [![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-ollama/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/@mearman/mcp-ollama.svg)](https://www.npmjs.com/package/@mearman/mcp-ollama) | ![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) | ![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) |
+
 ## Features
 
 - 🚀 **TypeScript with ES Modules** - Modern JavaScript with full type safety
