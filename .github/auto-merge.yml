@@ -1,0 +1,34 @@
+# Auto-merge configuration for template sync PRs
+# This file is used by downstream repositories to configure auto-merge behavior
+
+# Enable auto-merge for specific labels
+enabled: true
+
+# Labels that trigger auto-merge
+labels:
+  - "dependencies"
+  - "maintenance"
+
+# Require these checks to pass before merging
+required_status_checks:
+  - "build"
+  - "test"
+  - "lint"
+
+# Merge method: squash, merge, or rebase
+merge_method: squash
+
+# Delete branch after merge
+delete_branch_on_merge: true
+
+# Approval requirements (set to 0 for template sync PRs)
+required_approvals: 0
+
+# Comment to add when auto-merge is enabled
+comment: |
+  🤖 Auto-merge has been enabled for this template sync PR.
+  
+  The PR will be merged automatically once all checks pass. If you need to prevent the merge:
+  - Add a `/hold` comment
+  - Request changes on the PR
+  - Close the PR

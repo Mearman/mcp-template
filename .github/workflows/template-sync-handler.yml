@@ -16,6 +16,10 @@ on:
         default: 'false'
         type: boolean
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   sync-template:
     runs-on: ubuntu-latest
@@ -268,6 +272,57 @@ Template version: ${process.env.TEMPLATE_VERSION}"`);
           
           node sync-template.js
           
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: sync with upstream template'
+          title: '🔄 Sync with upstream template'
+          body: |
+            ## 🔄 Template Synchronization
+            
+            This PR synchronizes this repository with the latest changes from the upstream template.
+            
+            ### Changes included:
+            - Updated workflows from `.github/workflows/`
+            - Updated configuration files
+            - Updated shared utilities
+            
+            ### Review checklist:
+            - [ ] Review the changes to ensure they don't break existing functionality
+            - [ ] Ensure all tests pass
+            - [ ] Verify that project-specific modifications are preserved
+            
+            ---
+            *This PR was automatically created by the template sync workflow.*
+          branch: template-sync
+          delete-branch: true
+          labels: |
+            dependencies
+            maintenance
+            
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.create-pr.outputs.pull-request-number }}
+        run: |
+          # Enable auto-merge for the PR
+          gh pr merge $PR_NUMBER --auto --squash --delete-branch
+          
+          # Add a comment explaining auto-merge
+          gh pr comment $PR_NUMBER --body "🤖 **Auto-merge enabled**
+          
+          This PR will be automatically merged once all status checks pass.
+          
+          If you need to make changes or prevent the merge:
+          - Add commits to address any issues
+          - Use \`/hold\` comment to prevent merge
+          - Close the PR to cancel
+          
+          The merge will use squash mode to keep history clean."
+          
       - name: Create summary
         if: always()
         run: |
@@ -276,3 +331,7 @@ Template version: ${process.env.TEMPLATE_VERSION}"`);
           echo "- **Template Version:** ${{ env.TEMPLATE_VERSION }}" >> $GITHUB_STEP_SUMMARY  
           echo "- **Dry Run:** ${{ env.DRY_RUN }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          if [[ -n "${{ steps.create-pr.outputs.pull-request-number }}" ]]; then
+            echo "- **Pull Request:** #${{ steps.create-pr.outputs.pull-request-number }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Auto-merge:** Enabled ✅" >> $GITHUB_STEP_SUMMARY
+          fi

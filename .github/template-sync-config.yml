@@ -80,6 +80,9 @@ sync_files:
         replacement: "{{project_name}}"
       - pattern: "@mearman/mcp-template"
         replacement: "@mearman/{{project_name}}"
+        
+  - path: ".github/auto-merge.yml"
+    action: "replace"
 
   # Husky and commit hooks
   - path: ".husky/"
@@ -124,7 +127,7 @@ repo_discovery:
 # Sync behavior
 sync_behavior:
   create_pull_request: true
-  auto_merge: false
+  auto_merge: true
   pr_title: "chore: sync template updates (v{{template_version}})"
   pr_body: |
     ## Template Sync
