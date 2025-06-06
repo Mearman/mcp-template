@@ -1,7 +1,7 @@
 {
-	"name": "mcp-ollama",
-	"version": "0.1.0",
-	"description": "MCP server for Ollama local LLM integration",
+	"name": "mcp-template",
+	"version": "1.1.1",
+	"description": "Template for building MCP (Model Context Protocol) servers with TypeScript",
 	"main": "dist/index.js",
 	"type": "module",
 	"bin": "dist/index.js",
@@ -21,17 +21,15 @@
 	"keywords": [
 		"mcp",
 		"model-context-protocol",
-		"ollama",
-		"llm",
-		"local-llm",
-		"mcp-server",
-		"typescript"
+		"typescript",
+		"template",
+		"mcp-server"
 	],
 	"author": "Joseph Mearman",
 	"license": "CC-BY-NC-SA-4.0",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Mearman/mcp-ollama.git"
+		"url": "git+https://github.com/Mearman/mcp-template.git"
 	},
 	"publishConfig": {
 		"access": "public",

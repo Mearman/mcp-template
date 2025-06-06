@@ -42,7 +42,7 @@ export async function startMcpServer() {
 	 */
 	const server = new Server(
 		{
-			name: 'mcp-ollama',
+			name: 'mcp-template',
 			version: '0.1.0',
 		},
 		{
