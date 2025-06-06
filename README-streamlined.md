@@ -7,13 +7,13 @@ TypeScript template for building MCP (Model Context Protocol) servers with autom
 
 ## MCP Server Ecosystem
 
-| Repository | CI | Release | NPM | Description |
-|------------|:--:|:-------:|:---:|-------------|
-| **[mcp-template](https://github.com/Mearman/mcp-template)** | ![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg) | *Template* | Base template repository |
-| **[mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine)** | ![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-wayback-machine.svg) | ![npm](https://img.shields.io/npm/v/mcp-wayback-machine.svg) | Internet Archive integration |
-| **[mcp-openalex](https://github.com/Mearman/mcp-openalex)** | ![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-openalex.svg) | ![npm](https://img.shields.io/npm/v/mcp-openalex.svg) | Academic knowledge graph |
-| **[mcp-mcp](https://github.com/Mearman/mcp-mcp)** | ![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-mcp.svg) | ![npm](https://img.shields.io/npm/v/mcp-mcp.svg) | Template with examples |
-| **[mcp-ollama](https://github.com/Mearman/mcp-ollama)** | ![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-ollama.svg) | ![npm](https://img.shields.io/npm/v/mcp-ollama.svg) | Ollama model integration |
+| Repository | CI | Release | NPM | Coverage | Description |
+|------------|:--:|:-------:|:---:|:-------:|-------------|
+| **[mcp-template](https://github.com/Mearman/mcp-template)** | ![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg) | *Template* | ![Coverage](.github/badges/coverage.svg) | Base template repository |
+| **[mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine)** | ![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-wayback-machine.svg) | ![npm](https://img.shields.io/npm/v/mcp-wayback-machine.svg) | ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen) | Internet Archive integration |
+| **[mcp-openalex](https://github.com/Mearman/mcp-openalex)** | ![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-openalex.svg) | ![npm](https://img.shields.io/npm/v/mcp-openalex.svg) | ![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen) | Academic knowledge graph |
+| **[mcp-mcp](https://github.com/Mearman/mcp-mcp)** | ![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-mcp.svg) | ![npm](https://img.shields.io/npm/v/mcp-mcp.svg) | ![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen) | Template with examples |
+| **[mcp-ollama](https://github.com/Mearman/mcp-ollama)** | ![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-ollama.svg) | ![npm](https://img.shields.io/npm/v/mcp-ollama.svg) | ![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) | Ollama model integration |
 
 ## Quick Start
 
