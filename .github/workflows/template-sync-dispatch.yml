@@ -49,7 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REPOS: ${{ github.event.inputs.target_repos || 'all' }}
         run: |
-          cat > discover-repos.js << 'EOF'
+          cat > discover-repos.cjs << 'EOF'
           const { Octokit } = require('@octokit/rest');
           
           const octokit = new Octokit({
@@ -99,7 +99,7 @@ jobs:
           EOF
           
           npm install @octokit/rest
-          repos=$(node discover-repos.js)
+          repos=$(node discover-repos.cjs)
           echo "repos=$repos" >> $GITHUB_OUTPUT
           
   trigger-sync:
