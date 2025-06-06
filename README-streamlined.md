@@ -7,6 +7,8 @@ TypeScript template for building MCP (Model Context Protocol) servers with autom
 
 ## MCP Server Ecosystem
 
+<div align="center">
+
 | Repository | CI | Release | NPM | Coverage |
 |------------|:--:|:-------:|:---:|:-------:|
 | **[mcp-template](https://github.com/Mearman/mcp-template)**<br/>Base template repository | ![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg) | *Template* | ![Coverage](.github/badges/coverage.svg) |
@@ -14,6 +16,8 @@ TypeScript template for building MCP (Model Context Protocol) servers with autom
 | **[mcp-openalex](https://github.com/Mearman/mcp-openalex)**<br/>Academic knowledge graph | ![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-openalex.svg) | ![npm](https://img.shields.io/npm/v/mcp-openalex.svg) | ![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen) |
 | **[mcp-mcp](https://github.com/Mearman/mcp-mcp)**<br/>Template with examples | ![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-mcp.svg) | ![npm](https://img.shields.io/npm/v/mcp-mcp.svg) | ![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen) |
 | **[mcp-ollama](https://github.com/Mearman/mcp-ollama)**<br/>Ollama model integration | ![CI](https://github.com/Mearman/mcp-ollama/actions/workflows/ci.yml/badge.svg) | ![Release](https://img.shields.io/github/v/release/Mearman/mcp-ollama.svg) | ![npm](https://img.shields.io/npm/v/mcp-ollama.svg) | ![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen) |
+
+</div>
 
 ## Quick Start
 
