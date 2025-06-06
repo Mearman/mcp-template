@@ -1,6 +1,6 @@
 # MCP Template
 
-[![npm version](https://img.shields.io/npm/v/mcp-template.svg)](https://www.npmjs.com/package/mcp-template)
+[![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg)](https://github.com/Mearman/mcp-template/releases)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Build Status
@@ -46,9 +46,9 @@ MCP server for interacting with Ollama models.
 
 ### 📊 Status Overview
 
-| Repository | CI Status | Release | NPM Version | Coverage |
-|------------|-----------|---------|-------------|----------|
-| [mcp-template](https://github.com/Mearman/mcp-template) | [![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/mcp-template.svg)](https://www.npmjs.com/package/mcp-template) | ![Coverage](.github/badges/coverage.svg) |
+| Repository | CI Status | Release | Version | Coverage |
+|------------|-----------|---------|---------|----------|
+| [mcp-template](https://github.com/Mearman/mcp-template) | [![CI](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-template/actions/workflows/semantic-release.yml) | [![GitHub release](https://img.shields.io/github/v/release/Mearman/mcp-template.svg)](https://github.com/Mearman/mcp-template/releases) | ![Coverage](.github/badges/coverage.svg) |
 | [mcp-wayback-machine](https://github.com/Mearman/mcp-wayback-machine) | [![CI](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-wayback-machine/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/mcp-wayback-machine.svg)](https://www.npmjs.com/package/mcp-wayback-machine) | ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen) |
 | [mcp-openalex](https://github.com/Mearman/mcp-openalex) | [![CI](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-openalex/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/mcp-openalex.svg)](https://www.npmjs.com/package/mcp-openalex) | ![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen) |
 | [mcp-mcp](https://github.com/Mearman/mcp-mcp) | [![CI](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/ci.yml) | [![Release](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/Mearman/mcp-mcp/actions/workflows/semantic-release.yml) | [![npm](https://img.shields.io/npm/v/mcp-mcp.svg)](https://www.npmjs.com/package/mcp-mcp) | ![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen) |
